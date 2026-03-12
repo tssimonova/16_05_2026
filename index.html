@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Свадебное приглашение</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white">
+    <div class="pool-container">
+        <div class="pool-table">
+            <div class="cue" id="cue">
+                <div class="cue-tip"></div>
+            </div>
+            <div class="balls-container">
+                <div class="ball ball-16" id="ball16"><span class="ball-number">16</span></div>
+                <div class="ball ball-5" id="ball5"><span class="ball-number">5</span></div>
+                <div class="ball ball-26" id="ball26"><span class="ball-number">26</span></div>
+            </div>
+            <div class="swipe-hint">Свайпни, чтобы разбить шары</div>
+        </div>
+    </div>
+    
+    <div class="invitation-content" id="invitationContent">
+        <div class="note-layer">
+            <div class="note-card">
+                <div class="names-block">
+                    <h1 class="names">Никита<br>+<br>Таня</h1>
+                </div>
+
+                <!-- Первая фотография, крупно, по центру -->
+                <div class="photo-container">
+                    <div class="photo-frame">
+                        <img src="firs_pic.png" alt="Свадебная фотография" class="wedding-photo">
+                    </div>
+                </div>
+
+                <div class="invitation-text">
+                    <!-- Приветствие -->
+                    <p class="pool-metaphor">Привет!<br>Спустя 9 лет мы <span class="highlight-text"><strong>НАКОНЕЦ-ТО</strong></span> решили пожениться.<br>Мы хотим встретить этот день в узком семейном кругу, но вечер будем рады провести в компании наших лучших друзей — так что без тебя никак!</p>
+
+                    <!-- Анимированные маленькие шары -->
+                    <div class="mini-balls-container">
+                        <div class="mini-ball ball-16"></div>
+                        <div class="mini-ball ball-5"></div>
+                        <div class="mini-ball ball-26"></div>
+                        <div class="mini-ball ball-cat"></div>
+                        <div class="mini-ball ball-white"></div>
+                    </div>
+
+                    <p class="pool-metaphor">Приходи забить пару шаров на нашу удачу, выпить пива за наше здоровье и вдоволь поплясать за нашу любовь!</p>
+
+                    <!-- Вторая фотография с вами двумя -->
+                    <div class="second-photo">
+                        <img src="us.png" alt="Мы" class="second-photo-img">
+                    </div>
+
+                    <!-- Финальная фраза -->
+                    <p class="pool-metaphor" style="margin-top:10px;">Дресс код - сиять!<br>Несмотря на неформальный вайб вечеринки, предлагаем принарядиться.<br>Это отличный повод закупиться или выгулять наряды, которые годами ждали свой звездный час!</p>
+
+                    <!-- Анимированные маленькие шары -->
+                    <div class="mini-balls-container">
+                        <div class="mini-ball ball-16"></div>
+                        <div class="mini-ball ball-5"></div>
+                        <div class="mini-ball ball-26"></div>
+                        <div class="mini-ball ball-cat"></div>
+                        <div class="mini-ball ball-white"></div>
+                    </div>
+
+                    <p class="pool-metaphor" style="margin-top:85px;">Увидимся с тобой через</p>
+
+                    <!-- Анимированный шар с таймером -->
+                    <div class="countdown-ball" id="countdownBall">
+                        <div class="countdown-number" id="countdownNumber">0</div>
+                    </div>
+                    <p class="pool-metaphor countdown-days" style="margin-bottom:85px;">дней</p>
+
+                    <!-- Информация: где / когда / во сколько -->
+                    <div class="pool-event">
+                        <h2>Где</h2>
+                        <p class="date-time">
+                            <a href="https://yandex.ru/maps/-/CPU1QUJd" target="_blank" rel="noopener noreferrer">Бильярдная «Перекаты»</a>
+                        </p>
+                        <h2 style="margin-top:12px;">Когда</h2>
+                        <p class="date-time">16.05.2026</p>
+                        <h2 style="margin-top:12px;">Во сколько</h2>
+                        <p class="date-time">Старт в 20:00, финал — когда закатим последний шар</p>
+                    </div>
+
+                    <p class="pool-metaphor" style="margin-top:85px;">Ты важнее любых цветов! Твое присутствие на нашем празднике — лучший подарок. Если хочешь добавить к этому что-то ещё, мы с радостью примем вклад в наш семейный бюджет.</p>
+
+                    <!-- Анимированные маленькие шары -->
+                    <div class="mini-balls-container">
+                        <div class="mini-ball ball-16"></div>
+                        <div class="mini-ball ball-5"></div>
+                        <div class="mini-ball ball-26"></div>
+                        <div class="mini-ball ball-cat"></div>
+                        <div class="mini-ball ball-white"></div>
+                    </div>
+
+                    <!-- Блок предсказания -->
+                    <div class="prediction-section">
+                        <p class="pool-metaphor" style="margin-top:85px;">Твоё предсказание на наш вечер:</p>
+                        <div class="prediction-ball" id="predictionBall">
+                            <div class="prediction-inner" id="predictionText">Ткни, чтобы встряхнуть</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+    <!-- Звук удара кия -->
+    <audio id="billiardSound" src="listen-to-the-billiard-percussion-sound.mp3" preload="auto"></audio>
+</html>
