@@ -147,18 +147,11 @@ document.addEventListener('DOMContentLoaded', function() {
             predictionBall.classList.add('shaking');
             predictionText.textContent = 'Шар думает...';
             
-            // Воспроизводим звук тряски с улучшениями для тач-устройств
+            // Воспроизводим звук тряски
             const shakeSound = document.getElementById('shakeSound');
             if (shakeSound) {
                 shakeSound.currentTime = 0;
-                // Принудительно воспроизводим звук на тач-устройствах
-                shakeSound.play().catch(e => {
-                    console.log('Не удалось воспроизвести звук тряски:', e);
-                    // Повторная попытка для тач-устройств
-                    setTimeout(() => {
-                        shakeSound.play().catch(e2 => console.log('Вторая попытка не удалась:', e2));
-                    }, 100);
-                });
+                shakeSound.play().catch(e => console.log('Не удалось воспроизвести звук тряски:', e));
             }
 
             setTimeout(() => {
@@ -223,18 +216,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (hasRolled) return;
             hasRolled = true;
             
-            // Воспроизводим звук выкатывания с улучшениями для тач-устройств
+            // Воспроизводим звук выкатывания
             const rollSound = document.getElementById('rollSound');
             if (rollSound) {
                 rollSound.currentTime = 0;
-                // Принудительно воспроизводим звук на тач-устройствах
-                rollSound.play().catch(e => {
-                    console.log('Не удалось воспроизвести звук выкатывания:', e);
-                    // Повторная попытка для тач-устройств
-                    setTimeout(() => {
-                        rollSound.play().catch(e2 => console.log('Вторая попытка не удалась:', e2));
-                    }, 100);
-                });
+                rollSound.play().catch(e => console.log('Не удалось воспроизвести звук выкатывания:', e));
             }
             
             // Анимация выкатывания шара
