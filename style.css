@@ -425,7 +425,7 @@ body {
 }
 
 .mini-balls-container {
-    width: 150vw;
+    width: 100%; max-width: 500px; margin: 85px auto 85px auto;
     height: 80px;
     margin: 85px -25vw 85px -25vw;
     position: relative;
@@ -493,7 +493,7 @@ body {
     
     /* Исправления для тач-устройств */
     .mini-balls-container {
-        width: 150vw;
+        width: 100%; max-width: 500px; margin: 85px auto 85px auto;
         margin: 85px -25vw 85px -25vw;
         position: relative;
         overflow: visible;
@@ -660,7 +660,7 @@ body {
     
     /* Исправления для тач-устройств */
     .mini-balls-container {
-        width: 150vw;
+        width: 100%; max-width: 500px; margin: 85px auto 85px auto;
         margin: 85px -25vw 85px -25vw;
         position: relative;
         overflow: visible;
