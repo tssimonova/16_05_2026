@@ -167,7 +167,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'забьёшь<br>свой шар',
             'напьёшься<br>пивом',
             'тебя чмокнет<br>Никита',
-            'тебя чмокнет<br>Таня'
+            'тебя чмокнет<br>Таня',
+            'ни разу<br>не проиграешь',
+            'поговоришь<br>о Сруне<br>10 раз'
         ];
 
         const startPrediction = () => {
