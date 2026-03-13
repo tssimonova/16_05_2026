@@ -146,6 +146,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // запускаем тряску на 3 секунды, затем показываем предсказание
             predictionBall.classList.add('shaking');
             predictionText.textContent = 'Шар думает...';
+            
+            // Воспроизводим звук тряски
+            const shakeSound = document.getElementById('shakeSound');
+            if (shakeSound) {
+                shakeSound.currentTime = 0;
+                shakeSound.play().catch(e => console.log('Не удалось воспроизвести звук тряски:', e));
+            }
 
             setTimeout(() => {
                 predictionBall.classList.remove('shaking');
@@ -204,9 +211,17 @@ document.addEventListener('DOMContentLoaded', function() {
         
         let hasRolled = false;
         
+        // Функция для запуска анимации шара
         function rollBall() {
             if (hasRolled) return;
             hasRolled = true;
+            
+            // Воспроизводим звук выкатывания
+            const rollSound = document.getElementById('rollSound');
+            if (rollSound) {
+                rollSound.currentTime = 0;
+                rollSound.play().catch(e => console.log('Не удалось воспроизвести звук выкатывания:', e));
+            }
             
             // Анимация выкатывания шара
             countdownBall.style.transition = 'none';
