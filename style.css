@@ -567,9 +567,11 @@ body {
     }
     10% {
         opacity: 1;
+        transform: translateY(-50%) rotate(45deg);
     }
     90% {
         opacity: 1;
+        transform: translateY(-50%) rotate(315deg);
     }
     100% {
         right: 100%;
