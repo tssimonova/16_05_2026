@@ -561,20 +561,22 @@ body {
 
 @keyframes rollMiniBallRight {
     0% {
-        right: -100px;
+        right: 100%;
         opacity: 0;
         transform: translateY(-50%) rotate(0deg);
     }
     10% {
         opacity: 1;
         transform: translateY(-50%) rotate(45deg);
+        right: 80%;
     }
     90% {
         opacity: 1;
         transform: translateY(-50%) rotate(315deg);
+        right: -20%;
     }
     100% {
-        right: 100%;
+        right: -100%;
         opacity: 0;
         transform: translateY(-50%) rotate(360deg);
     }
