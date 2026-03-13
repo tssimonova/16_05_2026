@@ -569,4 +569,31 @@ body {
     .date-time {
         font-size: 1.2em;
     }
+    
+    /* Исправления для тач-устройств */
+    .mini-balls-container {
+        width: 100vw;
+        margin: 85px -50vw 85px -50vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .prediction-section {
+        padding: 0 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .prediction-ball {
+        width: 280px;
+        height: 280px;
+    }
+    
+    /* Улучшение звука на тач-устройствах */
+    audio {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
 }
