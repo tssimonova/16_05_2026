@@ -447,6 +447,33 @@ body {
     animation: rollMiniBallRight 8s ease-in-out infinite;
 }
 
+@media (max-width: 768px) {
+    .mini-ball.ball-16 {
+        right: -150px !important;
+        animation: rollMiniBallRight 8s ease-in-out infinite !important;
+    }
+    
+    .mini-ball.ball-5 {
+        right: -150px !important;
+        animation: rollMiniBallRight 8s ease-in-out infinite 1.6s !important;
+    }
+    
+    .mini-ball.ball-26 {
+        right: -150px !important;
+        animation: rollMiniBallRight 8s ease-in-out infinite 3.2s !important;
+    }
+    
+    .mini-ball.ball-cat {
+        right: -150px !important;
+        animation: rollMiniBallRight 8s ease-in-out infinite 4.8s !important;
+    }
+    
+    .mini-ball.ball-white {
+        right: -150px !important;
+        animation: rollMiniBallRight 8s ease-in-out infinite 6.4s !important;
+    }
+}
+
 .mini-ball.ball-5 {
     background: url('5.PNG') center center / cover no-repeat;
     right: -100px;
@@ -570,23 +597,29 @@ body {
         font-size: 1.2em;
     }
     
-    /* Исправления для тач-устройств */
+    /* Исправления для тач-устройств - более агрессивные */
     .mini-balls-container {
-        width: 100vw;
-        margin: 85px -50vw 85px -50vw;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 100vw !important;
+        margin: 85px 0 85px 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        position: relative !important;
+        overflow: visible !important;
     }
     
     .prediction-section {
-        padding: 0 10px;
-        width: 100%;
-        max-width: 100%;
+        padding: 0 5px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        position: relative !important;
     }
     
     .prediction-ball {
-        width: 280px;
-        height: 280px;
+        width: 280px !important;
+        height: 280px !important;
+        margin: 0 auto !important;
+        position: relative !important;
     }
     
     /* Улучшение звука на тач-устройствах */
