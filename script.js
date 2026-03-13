@@ -3,6 +3,34 @@ let touchEndY = 0;
 let hasInteracted = false;
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Инициализация аудио для Safari
+    const initAudioForSafari = () => {
+        const audioElements = ['billiardSound', 'shakeSound', 'rollSound'];
+        audioElements.forEach(id => {
+            const audio = document.getElementById(id);
+            if (audio) {
+                // Создаем тишину для инициализации аудио контекста
+                audio.volume = 0.1;
+                audio.play().then(() => {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    audio.volume = 1;
+                }).catch(e => {
+                    console.log(`Инициализация аудио ${id} не удалась:`, e);
+                });
+            }
+        });
+    };
+
+    // Запускаем инициализацию при первом взаимодействии
+    const firstInteraction = () => {
+        initAudioForSafari();
+        document.removeEventListener('touchstart', firstInteraction);
+        document.removeEventListener('click', firstInteraction);
+    };
+    
+    document.addEventListener('touchstart', firstInteraction, { once: true });
+    document.addEventListener('click', firstInteraction, { once: true });
     // Всегда показываем шары при загрузке
     const invitationContent = document.getElementById('invitationContent');
     const poolContainer = document.querySelector('.pool-container');
@@ -139,8 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'забьёшь<br>свой шар',
             'напьёшься<br>пивом',
             'тебя чмокнет<br>Никита',
-            'тебя чмокнет<br>Таня',
-            'ни разу<br>не проиграешь'
+            'тебя чмокнет<br>Таня'
         ];
 
         const startPrediction = () => {
@@ -148,13 +175,26 @@ document.addEventListener('DOMContentLoaded', function() {
             predictionBall.classList.add('shaking');
             predictionText.textContent = 'Шар думает...';
             
-            // Воспроизводим звук тряски
+            // Воспроизводим звук тряски с улучшениями для Safari
             const shakeSound = document.getElementById('shakeSound');
             if (shakeSound) {
                 shakeSound.currentTime = 0;
-                shakeSound.play().catch(e => console.log('Не удалось воспроизвести звук тряски:', e));
+                // Для Safari: создаем обещание и обрабатываем ошибки
+                const playPromise = shakeSound.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        console.log('Звук тряски воспроизведен успешно');
+                    }).catch(error => {
+                        console.log('Ошибка воспроизведения звука тряски:', error);
+                        // Повторная попытка для Safari
+                        setTimeout(() => {
+                            shakeSound.play().catch(e2 => console.log('Вторая попытка не удалась:', e2));
+                        }, 200);
+                    });
+                }
             }
-
+            
             setTimeout(() => {
                 predictionBall.classList.remove('shaking');
                 const random = predictions[Math.floor(Math.random() * predictions.length)];
