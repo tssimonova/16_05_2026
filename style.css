@@ -1,19 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik+Mono+One&family=Montserrat:wght@400;600;700&family=Droid+Serif:wght@400;700&display=swap');
 
-@font-face {
-    font-family: 'Sturkopf_Grotesk';
-    src: url('Sturkopf_Grotesk/SturkopfGrotesk (Rus by Rigbi).ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Zvezda_NHZDN';
-    src: url('Zvezda%20NHZDN/Zvezda_NHZDN_Bold_Italic_v.1.1.otf') format('opentype');
-    font-weight: bold;
-    font-style: italic;
-}
-
 * {
     margin: 0;
     padding: 0;
