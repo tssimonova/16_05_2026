@@ -565,15 +565,15 @@ body {
         opacity: 0;
         transform: translateY(-50%) rotate(0deg);
     }
-    10% {
+    5% {
         opacity: 1;
-        transform: translateY(-50%) rotate(45deg);
-        right: 80%;
+        transform: translateY(-50%) rotate(22deg);
+        right: 95%;
     }
-    90% {
+    95% {
         opacity: 1;
-        transform: translateY(-50%) rotate(315deg);
-        right: -20%;
+        transform: translateY(-50%) rotate(338deg);
+        right: -5%;
     }
     100% {
         right: -100%;
